@@ -26,32 +26,121 @@
     <img src="download (5).jfif" alt="grass">
 
     <div class="row"> </div>
-        <div><img src="download (2).jfif" alt="bush">
-        <img src="download (2).jfif" alt="bush">
-        <img src="download (2).jfif" alt="bush">
-        <img src="download (2).jfif" alt="bush">
-        <img src="download (2).jfif" alt="bush">
-        <img src="download (2).jfif" alt="bush"></div>
+        <div><img src="download (2).jfif" id ="bush1" onclick="check(0)" alt="bush">
+        <img src="download (2).jfif" id ="bush2" onclick="check(1)" alt="bush">
+        <img src="download (2).jfif" id ="bush3" onclick="check(2)" alt="bush">
+        <img src="download (2).jfif" id ="bush4" onclick="check(3)" alt="bush">
+        <img src="download (2).jfif" id ="bush5" onclick="check(4)" alt="bush">
+        <img src="download (2).jfif" id ="bush6" onclick="check(5)" alt="bush"></div>
     <div class="row">
-        <div> <img src="download (3).jfif" alt="mouse">
-        <img src="download (3).jfif" alt="mouse">
-        <img src="download (3).jfif" alt="mouse">
-        <img src="download (3).jfif" alt="mouse">
-        <img src="download (3).jfif" alt="mouse">
-        <img src="download (3).jfif" alt="mouse"></div>
+        <div> <img src="download (3).jfif" id ="mouse1" onclick="check(6)"alt="mouse">
+        <img src="download (3).jfif" id ="mouse2" onclick="check(7)" alt="mouse">
+        <img src="download (3).jfif" id ="mouse3" onclick="check(8)" alt="mouse">
+        <img src="download (3).jfif" id ="mouse4" onclick="check(9)" alt="mouse">
+        <img src="download (3).jfif" id ="mouse5" onclick="check(10)" alt="mouse">
+        <img src="download (3).jfif" id ="mouse6" onclick="check(11)" alt="mouse"></div>
     <div class="row">
-        <img src="download (4).jfif" alt="tiger">
-        <img src="download (4).jfif" alt="tiger">
-        <img src="download (4).jfif" alt="tiger">
-        <img src="download (4).jfif" alt="tiger">
-        <img src="download (4).jfif" alt="tiger">
-        <img src="download (4).jfif" alt="tiger"></div>
+        <img src="download (4).jfif" id ="tiger1" onclick="check(12)" alt="tiger">
+        <img src="download (4).jfif" id ="tiger2" onclick="check(13)" alt="tiger">
+        <img src="download (4).jfif" id ="tiger3" onclick="check(14)" alt="tiger">
+        <img src="download (4).jfif" id ="tiger4" onclick="check(15)" alt="tiger">
+        <img src="download (4).jfif" id ="tiger5" onclick="check(16)" alt="tiger">
+        <img src="download (4).jfif" id ="tiger6" onclick="check(17)" alt="tiger"></div>
     <div class="row">
-        <img src="download (5).jfif" alt="grass">
-        <img src="download (5).jfif" alt="grass">
-        <img src="download (5).jfif" alt="grass">
-        <img src="download (5).jfif" alt="grass">
-        <img src="download (5).jfif" alt="grass">
-        <img src="download (5).jfif" alt="grass"></div>
+        <img src="download (5).jfif" id ="grass1" onclick="check(18)" alt="grass">
+        <img src="download (5).jfif" id ="grass2" onclick="check(19)" alt="grass">
+        <img src="download (5).jfif" id ="grass3" onclick="check(20)" alt="grass">
+        <img src="download (5).jfif" id ="grass4" onclick="check(21)" alt="grass">
+        <img src="download (5).jfif" id ="grass5" onclick="check(22)" alt="grass">
+        <img src="download (5).jfif" id ="grass6" onclick="check(23)" alt="grass"></div>
+
+        <script>
+            var ids = [];
+
+                ids(0) = bush1;
+                ids(1) = bush2;
+                ids(2) = bush3;
+                ids(3) = bush4;
+                ids(4) = bush5;
+                ids(5) = bush6;
+
+                ids(6) = mouse1;
+                ids(7) = mouse2;
+                ids(8) = mouse3;
+                ids(9) = mouse4;
+                ids(10) = mouse5;
+                ids(11) = mouse6;
+
+                ids(12) = tiger1;
+                ids(13) = tiger2;
+                ids(14) = tiger3;
+                ids(15) = tiger4;
+                ids(16) = tiger5;
+                ids(17) = tiger6;
+
+                ids(18) = grass1;
+                ids(19) = grass2;
+                ids(20) = grass3;
+                ids(21) = grass4;
+                ids(22) = grass5;
+                ids(23) = grass6;
+
+        var checkCount = 0;
+        var penalty = 0;
+        var lastCheck = 0;
+        var mouseLocation = 13;
+        var catLocation = 21;
+        var gameOver = false;
+
+        check(position) {
+
+            var id = document.GetElementById(bush1);
+            checkCount++;
+            document.GetElementById(bush1) = " ";
+            penalty++;
+
+
+            if(position == mousePosition) {
+                gameOver = true;
+                penalty = penalty - 3;
+            }
+
+            if(position == catPosition) {
+                gameOver = true;
+                penalty = penalty + 4;
+            }
+
+            document.GetElementById(penalty) = " ";
+            lastCheck = position;
+        }
+
+        help(position) {
+            place = position & 6 / 4;
+
+            if (location - catLocation == 0, 1) {
+                return "meow";
+            }
+
+            if (location - mouseLocation == 0, 1) {
+                return "squeak";
+        }
+
+            if (location - catLocation > 1) {
+                return "sorry, no help available";
+        }
+
+            if (location - mouseLocation > 1) {
+                return "sorry, no help available";
+        }
+
+        penalty++;
+
+        penalty = document.getElementById(position) = " ";
+        help = document.getElementById(position) = " ";
+        help = document.getElementById(onClick) = "Click for help";
+    }
+
+        </script>
+
 </body>
 </html>
