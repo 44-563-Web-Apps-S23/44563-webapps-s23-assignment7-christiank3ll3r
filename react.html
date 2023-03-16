@@ -28,7 +28,7 @@
     <p id="counter">Count </p>
   </div>
 
-  <button type="button">Start Timer</button>
+  <button type="button" onclick="startTime()">Start Timer</button>
   <button type="button" onclick="recordTime()">React</button>
   
   <script> 
@@ -38,6 +38,26 @@
   recordTime() {
     reactTime = Date.now();
   }
+
+  startTime() {
+    for (9) {
+        setTimeout(8-i) * 1000;
+    }
+
+    setTimeout(8000);
+
+    if (reactTime = 8000) {
+        return "Too Slow";
+    }
+
+    var endTime = Date.now();
+
+    var elapsed = startTime - endTime;
+
+    document.GetElementById(target) = "Time was: " + elapsed;
+  }
+
+  document.GetElementById(countdown) = "i";
 
   function buttonPress1() {
     setTimeout(function(){
