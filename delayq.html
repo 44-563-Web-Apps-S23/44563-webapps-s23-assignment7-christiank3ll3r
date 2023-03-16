@@ -40,9 +40,11 @@
 		</p>
         <input type="text" id ="input">
 		<button onclick="makeNewDiv()">Add value</button>
-        makeNewDiv(document.GetElementById(input));
-	
-	
+        
+        
+
+	    <button type="button" onclick="get()"> Get </button>
+        <button type="button" onclick="delay()"> Delay </button>
 </body>
 <script>
 	function makeNewDiv(){
@@ -56,5 +58,31 @@
 		container.appendChild(element)
 		
 	}
+
+    makeNewDiv(document.GetElementById(input));
+
+
+    get() {
+        var queueItems = getElementsByClassname("delayQ")
+        var length = queueItems.length()
+
+        if (length > 1){
+            queueItems[0].remove()
+        }
+}
+
+    delay() {
+        var queueItems = getElementsByClassname("delayQ")
+
+        if (length > 1) {
+            var removedItem = queueItems[0].remove()
+            queueItems.appendChild(removedItem)
+        }
+    }
+
+
 </script>
+
+
+
 </html>	
